@@ -70,6 +70,29 @@ h1 {
   backdrop-filter: blur(18px);
 }
 
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  color: #f5fff8;
+  background:
+    radial-gradient(circle at center, rgba(44, 170, 105, 0.22), transparent 34%),
+    rgba(5, 20, 18, 0.72);
+  font-size: clamp(1.4rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-shadow: 0 5px 22px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  transition: opacity 220ms ease, visibility 220ms ease;
+}
+
+.loading-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .status {
   max-width: min(48vw, 440px);
   padding: 10px 13px;

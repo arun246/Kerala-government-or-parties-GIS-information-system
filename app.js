@@ -1,4 +1,5 @@
 const sceneHost = document.querySelector("#scene");
+const loadingOverlay = document.querySelector("#loadingOverlay");
 const statusEl = document.querySelector("#dataStatus");
 const heightRange = document.querySelector("#heightRange");
 const resetButton = document.querySelector("#resetView");
@@ -125,7 +126,14 @@ async function init() {
   buildDistrictData();
   await loadStreets();
   rebuildMeshes();
-  requestAnimationFrame(draw);
+  requestAnimationFrame((time) => {
+    draw(time);
+    hideLoadingOverlay();
+  });
+}
+
+function hideLoadingOverlay() {
+  loadingOverlay?.classList.add("hidden");
 }
 
 async function loadOpenDataKerala() {
