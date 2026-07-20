@@ -1,0 +1,279 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #3f9f3f;
+  color: #eef8ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#app,
+.viewport,
+#scene {
+  width: 100vw;
+  height: 100vh;
+}
+
+.viewport {
+  position: relative;
+  background: #3f9f3f;
+}
+
+#scene {
+  position: absolute;
+  inset: 0;
+}
+
+.topbar {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  pointer-events: none;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: #8be0bd;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.35rem, 6vw, 5.4rem);
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.status,
+.hint,
+.panel,
+.attribution {
+  border: 1px solid rgba(191, 236, 218, 0.18);
+  background: rgba(5, 20, 18, 0.7);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.status {
+  max-width: min(48vw, 440px);
+  padding: 10px 13px;
+  border-radius: 8px;
+  color: #cce7dd;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.panel {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  width: min(320px, calc(100vw - 48px));
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: #d8f2e8;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: #49d18f;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #49d18f;
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-height: 40px;
+  overflow: hidden;
+  border: 1px solid rgba(177, 224, 203, 0.18);
+  border-radius: 8px;
+}
+
+button {
+  min-width: 0;
+  border: 0;
+  color: #dff7ed;
+  background: rgba(255, 255, 255, 0.04);
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button.active {
+  background: #3bc17f;
+  color: #062015;
+}
+
+.wide-button {
+  min-height: 42px;
+  border-radius: 8px;
+  background: rgba(139, 224, 189, 0.14);
+  border: 1px solid rgba(177, 224, 203, 0.18);
+}
+
+.icon-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(177, 224, 203, 0.2);
+}
+
+.detail-panel {
+  position: absolute;
+  top: 116px;
+  left: 24px;
+  width: min(430px, calc(100vw - 48px));
+  max-height: calc(100vh - 220px);
+  overflow: auto;
+  padding: 14px;
+  border: 1px solid rgba(191, 236, 218, 0.18);
+  border-radius: 8px;
+  background: rgba(5, 20, 18, 0.82);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(18px);
+}
+
+.detail-panel.hidden {
+  display: none;
+}
+
+.detail-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+#detailCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(191, 236, 218, 0.18);
+  border-radius: 8px;
+  background: #071411;
+}
+
+.detail-info {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+  color: #d8f2e8;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.detail-info strong {
+  color: #ffffff;
+}
+
+.hint {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  padding: 10px 13px;
+  border-radius: 8px;
+  color: #c7e4da;
+  font-size: 0.86rem;
+}
+
+.attribution {
+  position: absolute;
+  left: 24px;
+  bottom: 70px;
+  padding: 8px 11px;
+  border-radius: 8px;
+  color: #c7e4da;
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.label {
+  color: #f5fff8;
+  font-size: 12px;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    display: block;
+  }
+
+  .status {
+    max-width: 100%;
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  .hint {
+    left: 16px;
+    bottom: 194px;
+  }
+
+  .attribution {
+    left: 16px;
+    bottom: 238px;
+  }
+
+  .panel {
+    right: 16px;
+    bottom: 16px;
+    width: calc(100vw - 32px);
+  }
+
+  .detail-panel {
+    top: 122px;
+    left: 16px;
+    width: calc(100vw - 32px);
+    max-height: calc(100vh - 330px);
+  }
+}
