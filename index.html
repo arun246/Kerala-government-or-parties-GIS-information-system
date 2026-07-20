@@ -10,7 +10,15 @@
     <main id="app">
       <section class="viewport" aria-label="Interactive 3D Kerala map">
         <div id="scene"></div>
-        <div id="loadingOverlay" class="loading-overlay" role="status" aria-live="polite">Loading...</div>
+        <div
+          id="loadingOverlay"
+          class="loading-overlay"
+          role="status"
+          aria-live="polite"
+          style="position:absolute;inset:0;z-index:10;display:grid;place-items:center;"
+        >
+          Loading...
+        </div>
         <div class="topbar">
           <div>
             <p class="eyebrow">OpenStreetMap India</p>

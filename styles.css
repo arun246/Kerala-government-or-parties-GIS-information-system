@@ -70,6 +70,7 @@ h1 {
   backdrop-filter: blur(18px);
 }
 
+#loadingOverlay,
 .loading-overlay {
   position: absolute;
   inset: 0;
@@ -88,6 +89,7 @@ h1 {
   transition: opacity 220ms ease, visibility 220ms ease;
 }
 
+#loadingOverlay.hidden,
 .loading-overlay.hidden {
   opacity: 0;
   visibility: hidden;
